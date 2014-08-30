@@ -1,0 +1,168 @@
+BODY {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+DIV {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+TABLE {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+TD {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+CODE {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Lucida Console", "Courier", "Courier New", "monospaced"
+}
+TEXTAREA {
+	BORDER-RIGHT: #f0f0f0 2px window-inset; BORDER-TOP: #f0f0f0 2px window-inset; SCROLLBAR-FACE-COLOR: #f0f0f0; FONT-SIZE: 11px; SCROLLBAR-HIGHLIGHT-COLOR: #f4f4f4; BORDER-LEFT: #f0f0f0 2px window-inset; SCROLLBAR-SHADOW-COLOR: #e0e0e0; COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #e0e0e0; BORDER-BOTTOM: #f0f0f0 2px window-inset; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"; SCROLLBAR-DARKSHADOW-COLOR: #aaaaaa; SCROLLBAR-BASE-COLOR: #cccccc; BACKGROUND-COLOR: #f0f0f0; border-color-right: #FF0000
+}
+INPUT {
+	BORDER-RIGHT: #f0f0f0 2px window-inset; BORDER-TOP: #f0f0f0 2px window-inset; SCROLLBAR-FACE-COLOR: #f0f0f0; FONT-SIZE: 11px; SCROLLBAR-HIGHLIGHT-COLOR: #f4f4f4; BORDER-LEFT: #f0f0f0 2px window-inset; SCROLLBAR-SHADOW-COLOR: #e0e0e0; COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #e0e0e0; BORDER-BOTTOM: #f0f0f0 2px window-inset; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"; SCROLLBAR-DARKSHADOW-COLOR: #aaaaaa; SCROLLBAR-BASE-COLOR: #cccccc; BACKGROUND-COLOR: #f0f0f0; border-color-right: #FF0000
+}
+SELECT {
+	BORDER-RIGHT: #f0f0f0 2px window-inset; BORDER-TOP: #f0f0f0 2px window-inset; SCROLLBAR-FACE-COLOR: #f0f0f0; FONT-SIZE: 11px; SCROLLBAR-HIGHLIGHT-COLOR: #f4f4f4; BORDER-LEFT: #f0f0f0 2px window-inset; SCROLLBAR-SHADOW-COLOR: #e0e0e0; COLOR: #000000; SCROLLBAR-3DLIGHT-COLOR: #ffffff; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #e0e0e0; BORDER-BOTTOM: #f0f0f0 2px window-inset; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"; SCROLLBAR-DARKSHADOW-COLOR: #aaaaaa; SCROLLBAR-BASE-COLOR: #cccccc; BACKGROUND-COLOR: #f0f0f0; border-color-right: #FF0000
+}
+.lbutton {
+	BORDER-RIGHT: #f0f0f0 2px outset; BORDER-TOP: #f0f0f0 2px outset; FONT-SIZE: 10px; BORDER-LEFT: #f0f0f0 2px outset; COLOR: #000000; BORDER-BOTTOM: #f0f0f0 2px outset; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #f0f0f0
+}
+.rbutton {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 10px; BORDER-LEFT: 0px; COLOR: #000000; BORDER-BOTTOM: 0px; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: transparent
+}
+.sup {
+	FONT-SIZE: 10px; VERTICAL-ALIGN: top
+}
+.footer {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 12pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.smaller {
+	FONT-SIZE: 11pt; LINE-HEIGHT: 14pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.subheader {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 12pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.normal {
+	FONT-SIZE: 12pt; LINE-HEIGHT: 16pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.header {
+	FONT-SIZE: 13pt; LINE-HEIGHT: 17pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.title {
+	FONT-SIZE: 15pt; LINE-HEIGHT: 17pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.msg {
+	FONT-SIZE: 10pt; LINE-HEIGHT: 11pt; FONT-FAMILY: "Lucida Console", "Courier", "Courier New", "monospaced"
+}
+.dropcap {
+	FONT-SIZE: 45pt; LINE-HEIGHT: 42pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.dropcap2 {
+	FONT-SIZE: 40pt; LINE-HEIGHT: 48pt; FONT-FAMILY: "Trebuchet MS", "Arial", "Helvetica", "sans-serif"
+}
+.invis {
+	LEFT: 0px; WIDTH: 200px; POSITION: absolute; TOP: 0px
+}
+.unlitimage {
+	BORDER-LEFT-COLOR: #ffffff; BORDER-BOTTOM-COLOR: #ffffff; BORDER-TOP-COLOR: #ffffff; BORDER-RIGHT-COLOR: #ffffff
+}
+.error {
+	FONT-WEIGHT: bold; COLOR: #ff0000
+}
+.disabled {
+	COLOR: #cccccc
+}
+.glinkon {
+	COLOR: #9e2e2e; BACKGROUND-COLOR: #f3d9d9; TEXT-DECORATION: underline
+}
+.clinkon {
+	COLOR: #9e2e58; BACKGROUND-COLOR: #f3d9e2; TEXT-DECORATION: underline
+}
+.rlinkon {
+	COLOR: #2e6e9e; BACKGROUND-COLOR: #d9e7f3; TEXT-DECORATION: underline
+}
+.flinkon {
+	COLOR: #2e9e5e; BACKGROUND-COLOR: #d9f3e4; TEXT-DECORATION: underline
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #2e9e5e; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #2e9e5e; TEXT-DECORATION: underline
+}
+A.footer:link {
+	COLOR: #163850; TEXT-DECORATION: none
+}
+A.footer:visited {
+	COLOR: #163850; TEXT-DECORATION: none
+}
+A.footer:active {
+	COLOR: #2c71a0; TEXT-DECORATION: underline
+}
+A.footer:hover {
+	COLOR: #2c71a0; TEXT-DECORATION: underline
+}
+A.menulink:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menulink:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.menulink:active {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.menulink:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A.glink:link {
+	COLOR: #962c2c; TEXT-DECORATION: none
+}
+A.glink:visited {
+	COLOR: #7a1d1d; TEXT-DECORATION: none
+}
+A.glink:active {
+	COLOR: #9e2e2e; TEXT-DECORATION: underline
+}
+A.glink:hover {
+	COLOR: #9e2e2e; TEXT-DECORATION: underline
+}
+A.clink:link {
+	COLOR: #962c54; TEXT-DECORATION: none
+}
+A.clink:visited {
+	COLOR: #631d37; TEXT-DECORATION: none
+}
+A.clink:active {
+	COLOR: #9e2e58; TEXT-DECORATION: underline
+}
+A.clink:hover {
+	COLOR: #9e2e58; TEXT-DECORATION: underline
+}
+A.rlink:link {
+	COLOR: #2c71a0; TEXT-DECORATION: none
+}
+A.rlink:visited {
+	COLOR: #205a83; TEXT-DECORATION: none
+}
+A.rlink:active {
+	COLOR: #2e6e9e; TEXT-DECORATION: underline
+}
+A.rlink:hover {
+	COLOR: #2e6e9e; TEXT-DECORATION: underline
+}
+A.flink:link {
+	COLOR: #2c9659; TEXT-DECORATION: none
+}
+A.flink:visited {
+	COLOR: #1d633b; TEXT-DECORATION: none
+}
+A.flink:active {
+	COLOR: #2e9e5e; TEXT-DECORATION: underline
+}
+A.flink:hover {
+	COLOR: #2e9e5e; TEXT-DECORATION: underline
+}

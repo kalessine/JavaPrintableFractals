@@ -1,0 +1,182 @@
+/*
+ * @(#)DimensionPropertyEditor.java
+ *
+ * Copyright (c) 1999 Sun Microsystems, Inc. All Rights Reserved.
+ *
+ * Sun grants you ("Licensee") a non-exclusive, royalty free, license to use,
+ * modify and redistribute this software in source and binary code form,
+ * provided that i) this copyright notice and license appear on all copies of
+ * the software; and ii) Licensee does not utilize the software in a manner
+ * which is disparaging to Sun.
+ *
+ * This software is provided "AS IS," without a warranty of any kind. ALL
+ * EXPRESS OR IMPLIED CONDITIONS, REPRESENTATIONS AND WARRANTIES, INCLUDING ANY
+ * IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NON-INFRINGEMENT, ARE HEREBY EXCLUDED. SUN AND ITS LICENSORS SHALL NOT BE
+ * LIABLE FOR ANY DAMAGES SUFFERED BY LICENSEE AS A RESULT OF USING, MODIFYING
+ * OR DISTRIBUTING THE SOFTWARE OR ITS DERIVATIVES. IN NO EVENT WILL SUN OR ITS
+ * LICENSORS BE LIABLE FOR ANY LOST REVENUE, PROFIT OR DATA, OR FOR DIRECT,
+ * INDIRECT, SPECIAL, CONSEQUENTIAL, INCIDENTAL OR PUNITIVE DAMAGES, HOWEVER
+ * CAUSED AND REGARDLESS OF THE THEORY OF LIABILITY, ARISING OUT OF THE USE OF
+ * OR INABILITY TO USE SOFTWARE, EVEN IF SUN HAS BEEN ADVISED OF THE
+ * POSSIBILITY OF SUCH DAMAGES.
+ *
+ * This software is not designed or intended for use in on-line control of
+ * aircraft, air traffic, aircraft navigation or aircraft communications; or in
+ * the design, construction, operation or maintenance of any nuclear
+ * facility. Licensee represents and warrants that it will not use or
+ * redistribute the Software for such purposes.
+ */
+
+//package com.sun.glf.util;
+package fractal.gui.panel.util.editors;
+import fractal.gui.panel.util.GridBagPanel;
+import fractal.producer.calc.ComplexDouble;
+import fractal.producer.calc.ComplexNumber;
+import java.beans.*;
+
+import javax.swing.*;
+import javax.swing.event.*;
+
+//import com.sun.glf.util.*;
+
+/**
+ * Provides a UI Component to configure a Dimension
+ * property.
+ *
+ * @author       Vincent Hardy
+ * @version      1.0, 10/13/1998
+ */
+public class ComplexNumberPropertyEditor extends PropertyEditorSupport{
+  static final String REAL = "Real";
+  static final String IMAG = "Imag";
+
+  /** Dimension editor */
+  GridBagPanel editor;
+
+  /**
+   * This method is intended for use when generating Java code to set
+   * the value of the property.  It should return a fragment of Java code
+   * that can be used to initialize a variable with the current property
+   * value.
+   */
+  public String getJavaInitializationString() {
+    ComplexNumber c = (ComplexNumber)getValue();
+    return "new ComplexNumber(" + c.getReal() + ", " + c.getImag() + ")";
+  }
+
+  /**
+   * Gets the property value as a string suitable for presentation
+   * to a human to edit.
+   *
+   * @return The property value as a string suitable for presentation
+   *       to a human to edit.
+   * <p>   Returns "null" is the value can't be expressed as a string.
+   * <p>   If a non-null value is returned, then the PropertyEditor should
+   *	     be prepared to parse that string back in setAsText().
+   */
+  public String getAsText() {
+    return null;
+  }
+
+  /**
+   * Sets the property value by parsing a given String.  May raise
+   * java.lang.IllegalArgumentException if either the String is
+   * badly formatted or if this kind of property can't be expressed
+   * as text.
+   *
+   * @param text  The string to be parsed.
+   */
+  public void setAsText(String text) throws java.lang.IllegalArgumentException {
+    throw new IllegalArgumentException();
+  }
+
+  /**
+   * The Dimension Property editor displays two text fields, one for the 
+   * width, one for the height.
+   *
+   * @return A java.awt.Component that will allow a human to directly
+   *      edit the current property value.  May be null if this is
+   *	    not supported.
+   */
+  public java.awt.Component getCustomEditor() {
+    if(editor == null){
+      editor = new GridBagPanel();
+      
+      DoubleDocument realDoc = new DoubleDocument();
+      DoubleDocument imagDoc = new DoubleDocument();
+      final JTextField real = new JTextField(realDoc, "", 5);
+      final JTextField imag = new JTextField(imagDoc, "", 5);
+
+      editor.add(new JLabel(REAL), 0, 0, 1, 1, editor.CENTER, editor.NONE, 0, 0);
+      editor.add(real, 1, 0, 3, 1, editor.CENTER, editor.HORIZONTAL, 0, 0);
+      editor.add(new JLabel(IMAG), 0, 1, 1, 1 , editor.CENTER, editor.NONE, 0, 0);
+      editor.add(imag, 1, 1, 3, 1, editor.CENTER, editor.HORIZONTAL, 0, 0);
+      editor.add(Box.createHorizontalGlue(), 4, 2, 4, 1, editor.CENTER, editor.HORIZONTAL, 1, 0);
+
+      class DigitChangeListener implements DocumentListener, PropertyChangeListener{
+	boolean settingValue = false;
+
+	public void propertyChange(PropertyChangeEvent evt){
+	  if(!settingValue){
+	    ComplexNumber c = (ComplexNumber)getValue();
+	    real.setText("" + c.getReal());
+	    imag.setText("" + c.getImag());
+	  }
+	}
+
+	public void changedUpdate(DocumentEvent evt){
+	  onChange();
+	}
+
+	public void insertUpdate(DocumentEvent evt){
+	  onChange();
+	}
+
+	public void removeUpdate(DocumentEvent evt){
+	  onChange();
+	}
+
+	public void onChange(){
+	  try{
+	    String rs = real.getText();
+	    String is = imag.getText();
+	    double r = (rs!=null && rs.length()>0 && !rs.equals("-"))?Double.parseDouble(rs):0;
+	    double i = (is!=null && is.length()>0 && !is.equals("-"))?Double.parseDouble(is):0;
+	    settingValue = true;
+	    setValue(new ComplexDouble(r, i));
+	  }catch(NumberFormatException e){
+	    e.printStackTrace();
+	    ComplexNumber c = (ComplexNumber)getValue();
+	    real.setText("" + c.getReal());
+	    imag.setText("" + c.getImag());
+	  }finally{
+	    settingValue = false;
+	  }
+	}
+      };
+
+      DigitChangeListener listener = new DigitChangeListener();
+
+      // Synchronize UI with value
+      addPropertyChangeListener(listener);
+
+      // Synchronize value with UI
+      realDoc.addDocumentListener(listener);
+      imagDoc.addDocumentListener(listener);
+    }
+
+    return editor;
+  }
+
+  /**
+   * Determines whether the propertyEditor can provide a custom editor.
+   *
+   * @return  True if the propertyEditor can provide a custom editor.
+   */
+  public boolean supportsCustomEditor() {
+    return true;
+  }
+  
+}
+

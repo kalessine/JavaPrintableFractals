@@ -1,0 +1,272 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0045)http://www.fractalus.com/fractint/dmj-pub.htm -->
+<HTML><HEAD><TITLE>fractalus - FractInt Coloring Algorithms: My Collection</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"><LINK 
+href="fractalus - FractInt Coloring Algorithms My Collection_files/home.css" 
+type=text/css rel=STYLESHEET>
+<META content="" name=description>
+<META content="" name=keywords>
+<SCRIPT language=JavaScript>
+<!--
+// image swapping code for navbar
+//
+swap_icons = 7;			// three rollover images (binary 111)
+
+function inside(label)
+{
+    if (document.images && swap_icons == 0) // only bother if client does image-swaps
+        document.images["img-" + label].src = "/common/top-"+label+"-lit.gif";
+    return true;
+}
+function outside(label)
+{
+    if (document.images && swap_icons == 0) // only bother if client does image-swaps
+        document.images["img-" + label].src = "/common/top-"+label+".gif";
+    return true;
+}
+
+
+
+//-->
+</SCRIPT>
+
+<SCRIPT language=JavaScript 
+src="fractalus - FractInt Coloring Algorithms My Collection_files/menu.js"></SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#205a83 aLink=#2e9e5e link=#2c71a0 bgColor=#ffffff 
+leftMargin=0 topMargin=0 MARGINHEIGHT="0" MARGINWIDTH="0">
+<TABLE height="100%" cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top align=middle>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD bgColor=#000000><IMG height=2 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1></TD></TR>
+        <TR>
+          <TD align=middle 
+          background="fractalus - FractInt Coloring Algorithms My Collection_files/top-background.jpg">
+            <TABLE cellSpacing=0 cellPadding=0 width=664 
+            background="fractalus - FractInt Coloring Algorithms My Collection_files/top-green.gif" 
+            border=0>
+              <TBODY>
+              <TR>
+                <TD width=40><A onmouseover="inside('logo')" 
+                  onmouseout="outside('logo')" 
+                  href="http://www.fractalus.com/"><IMG height=48 alt=Home 
+                  hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/top-logo.gif" 
+                  width=40 border=0 name=img-logo></A></TD>
+                <TD width=13>
+                  <TABLE id=menuparent1 cellSpacing=0 cellPadding=0 border=0>
+                    <TBODY>
+                    <TR>
+                      <TD><A id=link-menu onmouseover="inside('menu')" 
+                        onclick="inside('menu'); showMenu(0,0); return false" 
+                        onmouseout="outside('menu')" 
+                        href="http://www.fractalus.com/map/"><IMG height=48 
+                        alt=Menu hspace=0 
+                        src="fractalus - FractInt Coloring Algorithms My Collection_files/top-menu.gif" 
+                        width=13 border=0 name=img-menu></A></TD></TR></TBODY></TABLE>
+                  <SCRIPT language=JavaScript><!--
+  	      doLayout();
+  	      // --></SCRIPT>
+                </TD>
+                <TD><IMG height=48 alt="" hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+                  width=4></TD>
+                <TD vAlign=center width=470><SPAN class=title><B>FractInt 
+                  Coloring Algorithms: My Collection</B></SPAN><BR><SPAN 
+                  class=subheader><A title="Return to this menu" 
+                  href="http://www.fractalus.com/info/">Information</A> : <A 
+                  title="Return to this menu" 
+                  href="http://www.fractalus.com/info/index.html#fractint">FractInt</A> 
+                  : <SPAN title="You are here">FractInt Coloring Algorithms: My 
+                  Collection</SPAN></SPAN></TD>
+                <TD width=80><IMG height=48 alt="" hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/top-fractal.jpg" 
+                  width=80 align=right></TD>
+                <TD width=57 
+                background="fractalus - FractInt Coloring Algorithms My Collection_files/top-blue.gif"><A 
+                  onmouseover="inside('search')" onmouseout="outside('search')" 
+                  href="http://www.fractalus.com/search/"><IMG height=48 
+                  alt=Search hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/top-search.gif" 
+                  width=40 border=0 name=img-search></A><IMG height=48 alt="" 
+                  hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+                  width=17></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+      <TABLE cellSpacing=0 cellPadding=0 width=550 border=0>
+        <TBODY>
+        <TR>
+          <TD><IMG height=8 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR>
+            <TABLE cellSpacing=0 cellPadding=0 align=left border=0>
+              <TBODY>
+              <TR>
+                <TD><SPAN class=dropcap>I</SPAN></TD></TR></TBODY></TABLE>have a 
+            large collection of <I>fractal coloring algorithms</I> implemented 
+            as FractInt formulas. Currently over 120 formulas are in this file. 
+            (There is also an <A 
+            href="http://www.fractalus.com/ultrafractal/dmj-pub-uf.htm">Ultra 
+            Fractal 2 version</A>.) <BR>&nbsp;&nbsp;&nbsp; Please note: these 
+            formulas use <CODE>IF</CODE>, which is supported in FractInt 19.6 
+            and later. If your version of FractInt is earlier than this, these 
+            formulas <I>will not</I> work. Go to the <A 
+            href="http://www.fractalus.com/tools/external?fractint">FractInt web 
+            pages</A> and download a more current version. <BR>&nbsp;<BR><SPAN 
+            class=header><B>Files</B></SPAN><BR><IMG height=8 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR><A 
+            href="http://www.fractalus.com/downloads/extras/dmj-pub.zip"><IMG 
+            height=10 alt="This link downloads a file." hspace=8 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/bullet-file.gif" 
+            width=8 border=0>dmj-pub.zip</A> &nbsp;&nbsp;&nbsp;&nbsp;<I>15K; 
+            formula files and examples</I> <BR>&nbsp;<BR><SPAN 
+            class=header><B>Installation</B></SPAN><BR><IMG height=8 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR>UnZIP the file to your <CODE>FRACTINT</CODE> directory. 
+            If you've modified your <CODE>SSTOOLS.INI</CODE> file to specify a 
+            location for your <CODE>FRM</CODE> and <CODE>PAR</CODE> files, you 
+            will need to move the unZIPped files to the proper locations. If you 
+            don't know what <CODE>SSTOOLS.INI</CODE> is, don't worry—unZIPping 
+            to your FractInt directory should be sufficient. The 
+            <CODE>dmj-pub.txt</CODE> file contains a brief introduction to using 
+            the files. <BR>&nbsp;<BR><SPAN class=header><B>Getting 
+            Started</B></SPAN><BR><IMG height=8 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR>There are so many formulas in this collection that it's 
+            hard to know where to start. To help with this, I have included 
+            twelve examples of images created with these formulas (most of which 
+            are also displayed in the <A 
+            href="http://www.fractalus.com/gallery/showgallery/1/">1998 and 1997 
+            galleries</A> here). To view these, start FractInt, press 
+            <CODE>@</CODE>, press <CODE>F6</CODE>, select 
+            <CODE>dmj-pub.par</CODE> and press <CODE>RETURN</CODE>. Scroll down 
+            to the end of the list and choose any of the parameters starting 
+            with <CODE>ex-</CODE>. These are the examples. 
+            <BR>&nbsp;&nbsp;&nbsp; Many of the formulas in this collection 
+            benefit from having certain parameters set that are not immediately 
+            obvious. Getting around this problem is why I've included a 
+            <CODE>PAR</CODE> file in the first place. To start fresh with one of 
+            these formulas, select it from the <CODE>PAR</CODE> file. This will 
+            set the correct starting location and any other parameters that the 
+            formula needs to operate correctly. <BR>&nbsp;&nbsp;&nbsp; To fully 
+            explore the richness of these formulas (now doesn't that sound 
+            pompous) you should feel free to fiddle with the options on the 
+            <CODE>z</CODE> screen. If you don't care to know what they do, and 
+            just want to mess around, you can skip the rest of this document. 
+            <BR>&nbsp;<BR><SPAN class=header><B>Formula Names</B></SPAN><BR><IMG 
+            height=8 alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR>Because there are so many formulas, I have used a simple 
+            naming convention to help you find the formula you want. Here is a 
+            sample name: 
+            <P>
+            <BLOCKQUOTE><CODE>dmj-Mand-Pnt-Dst-I</CODE> </BLOCKQUOTE>
+            <P>The name is broken up into segments, each separated by a dash 
+            (<CODE>-</CODE>). The first segment (<CODE>dmj</CODE>) is present on 
+            all the formulas; this is so that if you use ORGFRM to organize your 
+            formulas, they all stay together. <BR>&nbsp;&nbsp;&nbsp; The second 
+            segment indicates the fractal shape. Because of how coloring 
+            algorithms have to be <A 
+            href="http://www.fractalus.com/fractint/coloring.htm">implemented</A> 
+            in FractInt, every coloring algorithm must be tied in to a specific 
+            fractal shape. In this collection I have applied most of the 
+            coloring algorithms to both the Mandelbrot set (<CODE>Mand</CODE>) 
+            and Paul Derbyshire's NovaM fractal (<CODE>Nova</CODE>). A few 
+            algorithms are only available for the Mandelbrot set. 
+            <BR>&nbsp;&nbsp;&nbsp; The third segment indicates the orbit trap 
+            type, or the general coloring algorithm. Most of the formulas 
+            included are orbit trap variants. Orbit trap types include point 
+            (<CODE>Pnt</CODE>), hypercross (<CODE>Hyp</CODE>), circle 
+            (<CODE>Cir</CODE> and <CODE>Cr2</CODE>), cross or "plus" 
+            (<CODE>Pls</CODE>), rectangle (<CODE>Rct</CODE>), and spiral 
+            (<CODE>Spi</CODE>). Non-trap types include smooth iteration coloring 
+            (<CODE>Smooth</CODE>, <CODE>SmoothPHC</CODE>, and 
+            <CODE>SmoothX2</CODE>), triangle inequality (<CODE>Triangle</CODE>), 
+            and average angle (<CODE>ThetaW</CODE> and <CODE>ThetaW2</CODE>). 
+            <BR>&nbsp;&nbsp;&nbsp; The fourth segment (present only for trap 
+            types) indicates the coloring method used with the orbit trap. 
+            Several methods are available: closest distance to trap 
+            (<CODE>Dst</CODE>), angle to trap of closest approach 
+            (<CODE>Ang</CODE>), angle of point relative to origin of closest 
+            approach (<CODE>Dec</CODE>), and iteration of closest approach 
+            (<CODE>Itr</CODE>). <BR>&nbsp;&nbsp;&nbsp; The last segment, 
+            <CODE>-I</CODE>, if present, indicates that the formula will color 
+            the <I>inside</I> portions of the fractal with the same algorithm as 
+            the outside. Sometimes this can produce great results, but keep in 
+            mind these types will generally run slower. <BR>&nbsp;<BR><SPAN 
+            class=header><B>Formula Parameters</B></SPAN><BR><IMG height=8 
+            alt="" 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1><BR>Most of the formulas use parameters the same way. This 
+            will make it easier for you to learn which parameters do what. Here 
+            is a summary for the orbit trap types: 
+            <P><CODE>p1:&nbsp;&nbsp;</CODE> location of orbit trap 
+            center.<BR><CODE>p2r:&nbsp;</CODE> rotation angle of trap, in 
+            degrees.<BR><CODE>p2i:&nbsp;</CODE> trap aspect ratio, height:width 
+            (not for <CODE>Hyp</CODE>); for <CODE>Spi</CODE>, minimum 
+            iterations.<BR><CODE>p3r:&nbsp;</CODE> color scale (<CODE>Dst</CODE> 
+            only).<BR><CODE>p3i:&nbsp;</CODE> circle diameter (<CODE>Cir</CODE> 
+            and <CODE>Cr2</CODE>) or bailout.<BR>
+            <P>Non-orbit trap types generally only use <CODE>p3r</CODE> and 
+            <CODE>p3i</CODE> from the above list. <BR><BR>
+            <TABLE cellSpacing=0 cellPadding=0 width=450 border=0>
+              <TBODY>
+              <TR>
+                <TD width=16>&nbsp;</TD>
+                <TD width=434><IMG height=8 alt="" hspace=8 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/bullet-u.gif" 
+                  width=8 vspace=2 border=0><A 
+                  href="http://www.fractalus.com/info/index.html#fractint">Return 
+                  to FractInt</A><BR><IMG height=8 alt="" hspace=8 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/bullet-u.gif" 
+                  width=8 vspace=2 border=0><A 
+                  href="http://www.fractalus.com/info/">Return to 
+                  Information</A><BR><IMG height=8 alt="" hspace=8 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/bullet-u.gif" 
+                  width=8 vspace=2 border=0><A 
+                  href="http://www.fractalus.com/">Return to 
+              Entrance</A><BR></TD></TR></TBODY></TABLE><BR></P></TD></TR></TBODY></TABLE>
+      <DIV align=right><IMG height=1 alt="" 
+      src="fractalus - FractInt Coloring Algorithms My Collection_files/top-logo-lit.gif" 
+      width=1 onload="swap_icons &amp;= ~4; return true"><IMG height=1 alt="" 
+      src="fractalus - FractInt Coloring Algorithms My Collection_files/top-menu-lit.gif" 
+      width=1 onload="swap_icons &amp;= ~2; return true"><IMG height=1 alt="" 
+      src="fractalus - FractInt Coloring Algorithms My Collection_files/top-search-lit.gif" 
+      width=1 onload="swap_icons &amp;= ~1; return true"></DIV></TD></TR>
+  <TR>
+    <TD vAlign=bottom>
+      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+        <TBODY>
+        <TR>
+          <TD align=middle 
+          background="fractalus - FractInt Coloring Algorithms My Collection_files/bottom-background.jpg">
+            <TABLE cellSpacing=0 cellPadding=0 width=710 border=0>
+              <TBODY>
+              <TR>
+                <TD width=80><IMG height=32 alt="" hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/bottom-fractal.jpg" 
+                  width=80></TD>
+                <TD vAlign=center width=550 
+                background="fractalus - FractInt Coloring Algorithms My Collection_files/bottom-green.gif"><SPAN 
+                  class=footer><A class=footer title="More copyright notices" 
+                  href="http://www.fractalus.com/about/copyright.htm">Copyright</A> 
+                  © 1996-2004 Damien M. Jones</SPAN><IMG height=32 alt="" 
+                  hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+                  width=20 align=absMiddle></TD>
+                <TD width=80 
+                background="fractalus - FractInt Coloring Algorithms My Collection_files/bottom-green.gif"><IMG 
+                  height=32 alt="" hspace=0 
+                  src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+                  width=80></TD></TR></TBODY></TABLE></TD></TR>
+        <TR>
+          <TD bgColor=#000000><IMG height=1 alt="" hspace=0 
+            src="fractalus - FractInt Coloring Algorithms My Collection_files/blank.gif" 
+            width=1></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></BODY></HTML>

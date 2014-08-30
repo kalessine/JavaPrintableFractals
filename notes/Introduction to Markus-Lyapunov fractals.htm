@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0064)http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html -->
+<HTML><HEAD><TITLE>Introduction to Markus-Lyapunov fractals</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="Charles Vassallo" name=author>
+<META 
+content="Presentation for the layman of dynamical &#10;systems, the logistic formula, the Lyapunov exponents and their &#10;generalisation by Mario Markus" 
+name=description>
+<META content="Markus, Lyapunov, fractal pictures, logistic &#10;formula" 
+name=keywords>
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY text=#000000 vLink=#660066 link=#0000bb 
+background="Introduction to Markus-Lyapunov fractals_files/fond2c.jpg"><!-- *********** Introduction ************* --><!-- *** image de titre *** -->
+<DIV align=center><A name=debut><IMG height=230 alt="[ image ]" 
+src="Introduction to Markus-Lyapunov fractals_files/docpic1b.jpg" width=287></A> 
+<IMG height=183 alt="[ image ]" hspace=15 
+src="Introduction to Markus-Lyapunov fractals_files/doctitle.gif" width=261> 
+</DIV>
+<DIV align=center>
+<TABLE width=560>
+  <TBODY>
+  <TR>
+    <TD><!-- *** texte *** -->
+      <P>Several years ago, the Great Mandelbrot Fever began after the 
+      <I>Scientific American</I> revealed several of the beautiful Mandelbrot 
+      pictures obtained by H.O.&nbsp;Peitgen and P.H.&nbsp;Richter, later 
+      published in <I>"The Beauty of Fractals"</I> (Springer-Verlag, 1986). 
+      Could the same story have happened again? Very appealing pictures appeared 
+      in the September 1991 issue of the <I>Scientific American</I>, again with 
+      a (seemingly) simple numerical recipe to get them. Such a picture is 
+      featured just above, and a few more at <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#la_fin">the&nbsp;end</A> 
+      of this paper. How about hunting for such pictures by yourselves? 
+      <P>Unfortunately, there is a serious problem: by 1992, with a 25 Mhz 
+      68030, interesting images took ages to be computed, up to ten hours or 
+      even more. The 1997 Pentium and PowerPC are far faster but one now asks 
+      for increased resolutions and interesting images, not already explored, 
+      are more difficult to compute, so these fractals still require hours of 
+      CPU. 
+      <P>In a nutshell, the pictures are nothing but a mapping of <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#exposant">Lyapunov 
+      exponents</A> relative to a <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#markus">simple 
+      extension</A> of the <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#f_log_1">logistic 
+      formula</A> (this extension is due to Mario Markus, hence the name 
+      Markus-Lyapunov). Want more information? Just read on! And don't let the 
+      following few notions of contemporary mathematics deter you! 
+      <P><!-- ************ La formule logistique ************** --><!-- *** titre *** -->
+      <H2 align=left>
+      <TABLE cellPadding=8 bgColor=#bbaa99 border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT face=arial size=+2><I><STRONG><A name=f_log_1>The logistic 
+            formula</A></STRONG></I></FONT> </TD></TR></TBODY></TABLE></H2><!-- *** texte *** -->
+      <P>The logistic formula (also known as "Verhultz dynamics") is the 
+      simplest-known formula describing a chaotic dynamic system. Maybe you 
+      don't even know what a dynamic system is? Generally speaking, it's a 
+      highly abstract concept: think of a "system" which is examined at 
+      successive times; at time (n), the system is described with a variable 
+      X(n) (possibly multidimensional) and one admits that a specific law exists 
+      that allows to derive X(n) from the preceding X(n-1) (and the latter 
+      only). The object of the theory is to discuss the behavior of the 
+      successive X's when n grows to infinity. Do they converge towards a 
+      unique, stable value? If not, do they behave "regularly"? Or do they have 
+      a seemingly erratic, unintelligible, "chaotic" behavior? 
+      <P>The <A name=f_log_2>logistic formula</A> simply is a rudimentary 
+      attempt to modelize the evolution of an animal population. Here the 
+      variable X(n) is the number of animals in an isolated region, at year (n). 
+      If the growth rate was constant, the population at year (n+1) would be 
+      proportional to the population at year (n), namely 
+      <P align=center>X(n+1) = R * X(n) . 
+      <P>where R would be constant. Unfortunately, such an assumption would lead 
+      to an unrealistic exponential behavior. In fact, the growth rate must 
+      decrease when the population increases, because there is less and less 
+      food available. The simplest way to express this idea consists in assuming 
+      that R at year (n) can be put in the form R0-a*X(n) or, equivalently, 
+      <P align=center>R = r * [1-X(n)/Xmax] 
+      <P>where r and Xmax are two constants, unspecified so far; Xmax clearly is 
+      an upper bound for the population, beyond which the calculation becomes 
+      meaningless (the next X would be negative, or zero); r is called 
+      "fecundity factor" (the larger it is, the larger the increase from one 
+      year to the next one). Putting x(n)=X(n)/Xmax, the evolution law finally 
+      becomes 
+      <P align=center>x(n+1) = r * x(n) * [1-x(n)] 
+      <P>This is the logistic formula. Interesting x values lie between 0 and 1. 
+
+      <P><IMG height=179 alt="[ image ]" 
+      src="Introduction to Markus-Lyapunov fractals_files/logist1.gif" width=280 
+      align=right> The analysis of this "dynamic system" -i.e. the observation 
+      of x(n) when n goes to infinity- for various values of r, can be done with 
+      the figure on the right. For every point on the r axis, the logistic 
+      formula was applied 200 times, starting from x(0)=0.5 (in fact, this value 
+      does not matter), and then 300 times again, but now with plotting the 
+      corresponding (r,x) pixel in the figure each time. One notices that there 
+      is a single pixel for every r lower than 3: this means that the population 
+      then converges to a stable value. <BR clear=all>
+      <P>Every r between 3 and 3.45 corresponds to 2 pixels: this means that the 
+      population oscillates between a low value (with plenty of food available 
+      and a rapid growth), and a high value (no food enough, hence increased 
+      mortality): the "fecundity" is too high for a unique stable equilibrium to 
+      be possible. Things become more complex when the fecundity is further 
+      increased. First, the population oscillates between 4 values, then between 
+      8, 16... values, and for r&nbsp;&gt;&nbsp;3.57 it seems that there is an 
+      infinite number of possible points (forming continuous areas in the 
+      figure), between which the population seems to oscillate randomly: this is 
+      the <I>chaotic behavior</I>. 
+      <P><IMG height=180 alt="[ image ]" 
+      src="Introduction to Markus-Lyapunov fractals_files/logist2.gif" width=286 
+      align=left> However, the transition to chaos is not definitive: you can 
+      see islands with no dark pixels, corresponding to a quieter evolution of 
+      the population, which again alternates between a small number of values. 
+      You can see the details of such a stability island on the left; the whole 
+      figure is an enlargement of the marked area in the preceding image. Notice 
+      that the two figures are strikingly similar: this "self-similarity" is a 
+      common feature with fractal pictures. <BR clear=all><!-- ********* Les exposants de Lyapounov ********* --><!-- *** titre *** -->
+      <H2 align=left>
+      <TABLE cellPadding=8 bgColor=#bbaa99 border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT face=arial size=+2><I><STRONG><A name=exposant>Lyapunov 
+            exponents</A></STRONG></I></FONT> </TD></TR></TBODY></TABLE></H2><!-- *** texte *** -->
+      <P>Lyapunov was a Russian mathematician who lived around the turn of the 
+      century, long before computers were invented. We now explain his part in 
+      our story. 
+      <P>We have seen that, for low fecundity (r&nbsp;&lt;&nbsp;3), the 
+      population modelized with the <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#f_log_2">logistic 
+      formula</A> converges towards a single value. This limit does not depend 
+      on the initial value. If the population is suddenly modified at a given 
+      time, it will return to this limit after a few turns. A similar behavior 
+      can be observed for multi-valued oscillations: the 2, 4, 8... values 
+      forming the limiting cycle do not depend on the initial population, and 
+      this cycle is always recovered after a sudden perturbation. However, this 
+      return to the periodic cycle is all the longer as one is nearer to the 
+      chaos threshold. The limiting cycle is then said to be less and less 
+      "stable". This stability can be characterized with a number, <I>the 
+      Lyapunov exponent</I>. Stable evolutions correspond to large negative 
+      exponents; the stability decreases as the exponent goes closer to 0; 
+      finally, positive exponents correspond to chaotic evolutions. 
+      <P><A name=recette>The theory</A> of Lyapunov exponents is not easy. The 
+      <I>Scientific American</I> paper gives only a practical recipe for 
+      computing them in the case of the <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#f_log_2">logistic 
+      formula</A>. Take it as a magic formula: 
+      <P><PRE>  (1) Initialisation  x = x0                                                
+                      For i=1 to INIT:  x = rx(1-x)
+
+  (2) Derivation      total = 0        
+      of the          For i=1 to NLYAP: x = rx(1-x) 
+      exponent                          total = total + Log|r-2rx|/Log 2
+                      exponent = total / NLYAP 
+</PRE>
+      <P><CODE>x0</CODE> is arbitrary (between 0 and 1); <CODE>INIT</CODE> and 
+      <CODE>NLYAP</CODE> are arbitrary integers, which must be as high as 
+      possible to get precise evaluations. <!-- *********** The Markus' idea ********** --><!-- *** titre *** -->
+      <H2 align=left>
+      <TABLE cellPadding=8 bgColor=#bbaa99 border=0>
+        <TBODY>
+        <TR>
+          <TD><FONT face=arial size=+2><I><STRONG><A name=markus>The Markus 
+            idea</A></STRONG></I></FONT> </TD></TR></TBODY></TABLE></H2><!-- *** texte *** -->
+      <P>Mario Markus (from the Max Plank Institute for Nutrition) has imagined 
+      dynamic systems just slightly more complex than the <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#f_log_2">logistic 
+      formula</A>, where the fecundity is forced to alternate between two values 
+      r1 and r2, following a periodic pattern. The period is described by a root 
+      string made with "1" and "2"; for instance, a root "112" means that r 
+      takes successive values r1,r1,r2, r1,r1,r2, r1,r1,r2....and so on. These 
+      systems also display stable limit cycles or chaotic evolutions, depending 
+      on r1 and r2. The stability or the chaos can be analysed by computing the 
+      <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#exposant">Lyapunov 
+      exponent</A>, through the above <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#recette">recipe</A>, 
+      where the only change is that r is now forced to follow the prescribed 
+      periodic pattern. 
+      <P><IMG height=233 alt="[ image ]" hspace=8 
+      src="Introduction to Markus-Lyapunov fractals_files/docpic2b.jpg" 
+      width=308 align=left> The Markus pictures are simply a color mapping of 
+      the Lyapunov exponent versus r1 and r2, along horizontal and vertical axes 
+      respectively, for a given root string, here "1122". 
+      <P>Only the stability domain is plotted; here, chaos (i.e. positive 
+      exponents) is rendered in dark blue. When the exponent goes from 0 to 
+      minus infinity, shades range from light to dark. At zero, (chaos 
+      threshold), the color suddenly jumps from dark blue to a light shade. 
+      Obviously, this color mapping is arbitrary and can be changed as you want. 
+      <BR clear=all>
+      <P>One thus gets strange shapes floating in a fantastic universe, with a 
+      striking 3-D aspect. Of course, the pictures here are too small. You must 
+      see them in a full screen to do them justice. 
+      <P><IMG height=233 alt="[ image ]" hspace=8 
+      src="Introduction to Markus-Lyapunov fractals_files/docpic3b.jpg" 
+      width=306 align=right> 
+      <P>The rest of the game is the same as in <A 
+      href="http://perso.orange.fr/charles.vassallo/en/art/art_1a.html" 
+      target=_blank>classical Mandelbrot explorers</A>: you start from a general 
+      picture; you look for promising details and you enlarge them. For 
+      instance, the larger rectangle in the above picture leads to the picture 
+      on the right; the smaller one leads to the picture in <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/lyapdoc.html#debut">the 
+      title</A> of this article. <A 
+      href="http://perso.orange.fr/charles.vassallo/en/art/lyap00.html">Click 
+      here</A> to see an example of research for a complex root. <BR clear=all>
+      <P><A name=la_fin><IMG height=240 alt="[ image ]" hspace=8 
+      src="Introduction to Markus-Lyapunov fractals_files/docpic4b.jpg" 
+      width=305 align=left vspace=10></A> 
+      <P> 
+      <P> 
+      <P> 
+      <P> 
+      <P>This last picture was reused by the author in the composition "<A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/comp09.html">Image 
+      11</A>". It was computed with the root 11212, <CODE>INIT</CODE>=400 et 
+      <CODE>ITER</CODE>=800. The reward for a lengthy calculation... <BR 
+      clear=all><!-- *********** pied de page ************ -->
+      <P><FONT size=-1>[ <A 
+      href="http://perso.orange.fr/charles.vassallo/en/lyap_art/images1.html">Return 
+      to pictures</A> ]</FONT> 
+      <HR>
+
+      <ADDRESS><A href="mailto:Charles.Rosemarie.Vassallo@wanadoo.fr"><IMG 
+      alt=e-mail src="Introduction to Markus-Lyapunov fractals_files/mailto.gif" 
+      align=textTop border=0></A> <A 
+      href="mailto:Charles.Rosemarie.Vassallo@wanadoo.fr">Charles.Rosemarie.Vassallo@wanadoo.fr</A> 
+      </ADDRESS></TD></TR></TBODY></TABLE></DIV></BODY></HTML>

@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////////////////////////////////// 
+// Fractal : an Applet and an Application for drawing Fractals ///////////////// 
+//////////////////////////////////////////////////////////////////////////////// 
+// Copyright 2000 - David Leberknight - Anyone may use this code for any reason 
+// at any time, provided that they give an appropriate reference to this source, 
+// and send David some email at <davesFirstName>@<davesLastName>.com(no spam) 
+// Version 2.9 - Last Modified: March 5th, 2001 
+// Lifted From:
+// http://www.softwarefederation.com/fractal/Fractal.html
+  private boolean detectDeepZoom( Drawing d ) 
+  { 
+    // "Deep Zoom" occurs when the precision provided by the Java type double 
+    // runs out of resolution.  The use of BigDecimal is required to fix this. 
+    ComplexRectangle cr = d.getComplexRect(); 
+    double deltaDiv2 = cr.getWidth() / ( (double)( imageWidth ) * 2.0 ); 
+    String min = "" + ( cr.getRMin() ); 
+    String minPlus = "" + ( cr.getRMin() + deltaDiv2 ); 
+
+    if( Double.valueOf( min ).doubleValue() == 
+        Double.valueOf( minPlus ).doubleValue() ) 
+    { 
+      String deepZoom = "Deep Zoom...  Drawing resolution will be degraded ;-("; 
+      setStatus( deepZoom ); 
+      System.out.println( "" ); 
+      System.out.println( "Fractal: " + deepZoom ); 
+      return true; 
+    } 
+    return false; 
+  } 

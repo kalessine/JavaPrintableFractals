@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<!-- iText, a JAVA - PDF library                                      -->
+<!-- $Id: compile.xml 2815 2007-06-01 18:08:56Z xlv $         -->
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<project name="iText.compile" default="help">
+	
+	<property file=".ant.properties" />
+	
+	<path id="itext.classpath">
+	    <pathelement location="${itext.bin}"/>
+	    <pathelement path="${itext.lib}/bcmail-jdk14-135.jar"/>
+	    <pathelement path="${itext.lib}/bcprov-jdk14-135.jar"/>
+	</path>
+	
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Help                                                             -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="help" description="--> shows the help screen">
+        <echo>COMPILING AND JARRING THE CODE (compile.xml)</echo>
+        <echo>ant compile: compiles iText</echo>
+        <echo>ant compile.debug: compiles iText and allows you to debug the code</echo>
+        <echo>ant jar: compiles and jars iText</echo>
+        <echo>ant jar.debug: compiles for debugging and jars iText</echo>
+        <echo />
+	</target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Compiling the code                                               -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="compile" description="--> compiles the iText code">
+        <mkdir dir="${itext.bin}" />
+        <javac source="1.4" target="1.4" srcdir="${itext.src}" destdir="${itext.bin}">
+    	<classpath refid="itext.classpath"/>
+    	</javac>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Compiling the code for debugging                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="compile.debug" description="--> compiles the iText code for debugging">
+        <mkdir dir="${itext.bin}" />
+        <javac source="1.4" target="1.4" srcdir="${itext.src}" destdir="${itext.bin}" listfiles="yes" debug="true" debuglevel="lines,vars,source">
+        	<classpath refid="itext.classpath"/>
+       	</javac>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Jarring the code                                                 -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <target name="make.jar" description="--> makes a jarfile from the iText code">
+        <mkdir dir="${itext.bin}/com/lowagie/text/pdf/fonts" />
+        <copy todir="${itext.bin}/com/lowagie/text/pdf/fonts" overwrite="yes">
+            <fileset dir="${itext.src}/com/lowagie/text/pdf/fonts">
+                <include name="**/*.afm"/>
+                <include name="**/*.html"/>
+            </fileset>
+        </copy>
+        <copy todir="${itext.bin}/com/lowagie/text/" overwrite="yes">
+            <fileset dir="${itext.src}/com/lowagie/text/">
+                <include name="**/*.txt"/>
+            </fileset>
+        </copy>
+        <jar jarfile="${itext.lib}/iText.jar" basedir="${itext.bin}" excludes="com/lowagie/examples/**,**/*.cmap,**/*.properties,com/lowagie/text/pdf/fonts/cmaps/**">
+            <manifest>
+                <attribute name="Main-Class" value="com.lowagie.tools.ToolboxAvailable"/>
+                <attribute name="Class-Path" value="toolbox.jar bcmail-jdk14-135.jar bcprov-jdk14-135.jar"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Compiling and Jarring the code                                   -->
+	<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+    <target name="jar"  depends="compile, make.jar" description="--> makes a jarfile from the iText code" />
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Jarring the code (debug)                                         -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+	
+    <target name="jar.debug"  depends="compile.debug, make.jar" description="--> makes a jarfile from the iText code" />
+
+</project>

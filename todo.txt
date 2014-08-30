@@ -1,0 +1,10 @@
+1. Incorporate BigDecimal into producer code(make fractal generation more precise so we can zoom in more)
+2. Fix Aspect Ratio -->
+          When Saving as PDF give option to save as portrait or landscape
+3. Custom Aspect Ratio??? Allow User to enter an aspect ratio
+          When Saving as PDF give option to fit to Portrait/Landscape
+          or fit width/fit height to Portrait/Landscape
+   Orientation -> Portrait,Landscape
+   Width -> 100%
+   Height -> 100%
+   Positioning -> Top Left, 

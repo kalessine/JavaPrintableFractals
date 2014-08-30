@@ -1,0 +1,7 @@
+Formula to calculate point varies on where point falls...
+take 4 formulas, julia, mandelbrot, cubic mandel, quartic...
+
+-1,1 to 0,0 == Use Julia to calculate next point
+o,1 to -1,0 == Use Mandelbrot to calculate next point
+-1,-1 to 0,0 == Use Cubic Mandel to calculate next point
+0,0 to 1,1  == Use quartic mandel to calculate next point

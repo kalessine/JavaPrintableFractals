@@ -1,0 +1,53 @@
+[Python-Dev] Decimal and Exponentiation
+Tim Peters tim.peters at gmail.com 
+Fri May 19 23:18:50 CEST 2006 
+
+Previous message: [Python-Dev] [Python-checkins] r46043 - peps/trunk/pep-0356.txt 
+Next message: [Python-Dev] Decimal and Exponentiation 
+Messages sorted by: [ date ] [ thread ] [ subject ] [ author ] 
+
+--------------------------------------------------------------------------------
+
+[elventear]
+> I am the in the need to do some numerical calculations that involve
+> real numbers that are larger than what the native float can handle.
+>
+> I've tried to use Decimal, but I've found one main obstacle that I
+> don't know how to sort. I need to do exponentiation with real
+> exponents, but it seems that Decimal does not support non integer
+> exponents.
+>
+> I would appreciate if anyone could recommend a solution for this
+> problem.
+
+Wait <0.3 wink>.  Python's Decimal module intends to be a faithful
+implementation of IBM's proposed standard for decimal arithmetic:
+
+    http://www2.hursley.ibm.com/decimal/
+
+Last December, ln, log10, exp, and exponentiation to non-integral
+powers were added to the proposed standard, but nobody yet has written
+implementation code for Python's  module.  [Python-Dev:  somebody
+wants to volunteer for this :-)]
+
+If you're not a numeric expert, I wouldn't recommend that you try this
+yourself (in particular, trying to implement x**y as exp(ln(x)*y)
+using the same precision is mathematically correct but is numerically
+badly naive).
+
+The GNU GMP library (for which Python bindings are available) also
+supports "big floats", but their power operation is also restricted to
+integer powers and/or exact roots.  This can be painful even to try;
+e.g.,
+
+    >>> from gmpy import mpf
+    >>> mpf("1e10000") ** mpf("3.01")
+
+consumed well over a minute of CPU time (on a 3.4 GHz box) before dying with
+
+    ValueError: mpq.pow fractional exponent, inexact-root
+
+If you're working with floats outside the range of IEEE double, you
+_probably_ want to be working with logarithms instead anyway; but that
+depends on you app, and I don't want to know about it ;-)
+
