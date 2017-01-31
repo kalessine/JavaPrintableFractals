@@ -59,6 +59,7 @@ public class ColouringStore {
         COLOURINGS.remove(c);
     }
     static{
+        COLOURINGS.add(new RGBtoCMYKColour());
         COLOURINGS.add(new IterationsColouring());
         COLOURINGS.add(new RealColouring());
         COLOURINGS.add(new ImagColouring());
@@ -87,5 +88,6 @@ public class ColouringStore {
         COLOURINGS.add(new LogTenIterationsColouring());
         COLOURINGS.add(new NaturalLogIterationsColouring());
         COLOURINGS.add(new InColouring());
+        COLOURINGS.add(new DeutanColour());
     }
 }

@@ -12,6 +12,7 @@ package fractal.producer;
 import fractal.producer.calc.M;
 import fractal.producer.colour.ColourMap;
 import fractal.producer.colour.Colouring;
+import fractal.producer.colour.RGBtoCMYKColour;
 import fractal.producer.colour.builtin.IterationsColouring;
 import fractal.producer.exception.FractalSizeException;
 import fractal.producer.exception.RenderException;
@@ -70,6 +71,7 @@ public class Fractal implements Serializable {
         renderer.setFormulaArray(formulas);
         renderer.setColourMap(colourMap);
         renderer.setColouringsArray(getColourings());
+        getColourings().add(new RGBtoCMYKColour());
     }
     
     public ColourMap getColourMap() {
